@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'docker build -t angulardavidapp.azurecr.io/my-angular-app:latest .'
+                sh 'docker buildx build --platform linux/amd64 -t angulardavidapp.azurecr.io/my-angular-app:latest .'
             }
         }
         stage('Push') {
